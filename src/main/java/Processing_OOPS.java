@@ -10,7 +10,7 @@ import processing.core.PApplet;
 
     public static void main(String[] args)
     {
-        PApplet.main("TryProcessing", args);
+        PApplet.main("Processing_OOPS", args);
     }
 
     @Override
@@ -22,6 +22,10 @@ import processing.core.PApplet;
     @Override
     public void setup() {
 
+            ball1 = new Ball(1,HEIGHT/5, 10);
+            ball2 = new Ball(2,(2*HEIGHT)/5, 10);
+            ball3 = new Ball(3,(3*HEIGHT)/5, 10);
+            ball4 = new Ball(4,(4*HEIGHT)/5,10);
     }
 
     @Override
@@ -32,11 +36,12 @@ import processing.core.PApplet;
         drawInNextPos(ball3);
         drawInNextPos(ball4);
 
-
     }
 
     private void drawInNextPos(Ball ball) {
-        ball.drawBall();
+
+        // ball.drawBall(); --> error, why?
+        ellipse( ball.getPosX_Ball() , ball.getHeight_Ball(), ball.getDiameter(), ball.getDiameter() );
         ball.setPosX_Ball();
     }
 
